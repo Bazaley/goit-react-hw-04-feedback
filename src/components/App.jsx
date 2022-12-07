@@ -28,10 +28,7 @@ const App = () => {
   };
 
   const countTotalFeedback = () => {
-    return Object.values({ good, neutral, bad }).reduce(
-      (acc, elem) => acc + elem,
-      0
-    );
+    return good + neutral + bad;
   };
 
   const countPositiveFeedbackPercentage = () => {
@@ -42,7 +39,7 @@ const App = () => {
     <>
       <Section title="Please leave feedback">
         <FeedbackOptions
-          options={[good, neutral, bad]}
+          options={['good', 'neutral', 'bad']}
           handleGrade={handleGrade}
         />
       </Section>
