@@ -1,10 +1,12 @@
+import PropTypes from 'prop-types';
+
 import { ButtonBox, Button } from './FeedbackOptions.styled';
 
 export const FeedbackOptions = ({ options, handleGrade }) => {
   return (
     <>
       <ButtonBox>
-        {options.map(option => (
+        {Object.keys(options).map(option => (
           <Button
             key={option}
             type="button"
@@ -16,4 +18,9 @@ export const FeedbackOptions = ({ options, handleGrade }) => {
       </ButtonBox>
     </>
   );
+};
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.object.isRequired,
+  handleGrade: PropTypes.func.isRequired,
 };
